@@ -12,11 +12,9 @@ import platform
 
 from setuptools import setup
 
-if platform.system() == 'Windows':
-    setup_requires = ['py2exe']
-elif platform.system() == 'Darwin':
-    setup_requires = ['py2app']
-else:
-    setup_requires = []
+mainscript = 'inventaire.py'
 
-setup(setup_requires=setup_requires)
+if platform.system() == 'Windows':
+    setup(app=[mainscript], setup_requires=['py2exe'])
+elif platform.system() == 'Darwin':
+    setup(app=[mainscript], setup_requires=['py2app'])

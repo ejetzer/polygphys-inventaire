@@ -15,6 +15,7 @@ from setuptools import setup
 mainscript = 'inventaire.py'
 
 if platform.system() == 'Windows':
-    setup(app=[mainscript], setup_requires=['py2exe'])
+    import py2exe
+    setup(windows=[mainscript], setup_requires=['py2exe'])
 elif platform.system() == 'Darwin':
     setup(app=[mainscript], setup_requires=['py2app'])

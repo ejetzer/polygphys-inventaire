@@ -27,11 +27,12 @@ if __name__ == '__main__':
         dossier.mkdir()
         macos_db = CHEMINS['Darwin'] / SOUS_CHEMIN / 'inventaire.sqlite'
         win_db = CHEMINS['Windows'] / SOUS_CHEMIN / 'inventaire.sqlite'
+        win_db = win_db.lstrip('\\').lstrip('/')
 
         with cfg.open('w') as f:
             f.write(f'''[bd]
     Darwin: sqlite:///{macos_db}
-    Windows: sqlite:////{win_db}
+    Windows: sqlite:///{win_db}
     tables:
         boites
         inventaire

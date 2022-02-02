@@ -29,15 +29,27 @@ if __name__ == '__main__':
         with cfg.open('w') as f:
             f.write(f'''[bd]
     adresse: sqlite:///{db}
-    tables:
-        boites
-        inventaire
-    formulaires:
-        boites
-        inventaire
+tables:
+    personnes
+	locaux
+	portes
+	etageres
+	appareils
+	boites
+	emprunts
+	utilisation_boites
+formulaires = 
+	personnes
+	locaux
+	portes
+	etageres
+	appareils
+	boites
+	emprunts
+	utilisation_boites
 
 [tkinter]
-    title: Inventaire du département de génie physique à Polytechnique Montréal
+title: Inventaire du département de génie physique à Polytechnique Montréal
 ''')
 
         db.touch()

@@ -28,8 +28,8 @@ if __name__ == '__main__':
 
         with cfg.open('w') as f:
             f.write(f'''[bd]
-    adresse: sqlite:///{db}
-tables:
+    adresse = sqlite:///{db}
+tables =
     personnes
 	locaux
 	portes
